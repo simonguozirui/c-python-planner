@@ -6,9 +6,10 @@ from pathlib import Path
 import sys
 import subprocess
 
+"""
 class build_ext(_build_ext.build_ext):
     def run(self):
-            command = ["./build.sh", "-p", sys.executable]
+            command = ["bash", "build.sh", "-p", sys.executable]
             subprocess.check_call(command)
 
 class BinaryDistribution(Distribution):
@@ -36,3 +37,12 @@ def main():
 
 if __name__ == "__main__":
     main()
+"""
+
+
+module = Extension('my_package', sources = ['package.cpp'], language="c++")
+
+setup(name = 'my_package', version = '1.0',
+    description = 'Python Package with superfastcode C++ extension',
+    ext_modules = [module]
+    )
