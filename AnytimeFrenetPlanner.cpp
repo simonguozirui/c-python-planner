@@ -1,10 +1,4 @@
 #include "AnytimeFrenetPlanner.h"
-#include <mutex>
-#include <thread>
-#include <unistd.h>
-#include <stdio.h> 
-#include <math.h> 
-
 using namespace std;
 
 

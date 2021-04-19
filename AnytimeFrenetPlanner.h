@@ -6,6 +6,10 @@
 #include <mutex>
 #include <thread>
 #include <vector>
+#include <unistd.h>
+#include <stdio.h> 
+#include <math.h> 
+
 
 using namespace std;
 

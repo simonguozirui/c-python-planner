@@ -7,7 +7,7 @@ class MyClass {
 public:
     MyClass(int v) {
         this->value = v;
-        this->fot = NULL;
+        this->fot = new AnytimeFrenetPlanner();
     }
     ~MyClass() {
         std::cout << "Destroying class" << std::endl;
