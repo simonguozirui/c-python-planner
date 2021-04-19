@@ -23,30 +23,35 @@ private:
     AnytimeFrenetPlanner *fot;
 };
 
+typedef struct {
+    PyObject_HEAD
+    MyClass *my_class;
+} MyClassWrapper;
+
 PyObject *MyClass_new(PyTypeObject *type, PyObject *args, PyObject *kwds) {
-    MyClass *self = (MyClass*) type->tp_alloc(type, 1);
-   //  self->fot = NULL; // set fot = nullptr
+    MyClassWrapper *self = (MyClassWrapper*) type->tp_alloc(type, 1);
+    self->my_class = NULL;
     printf("Module: myclass new\n");
     return (PyObject *) self;
 }
 
 // need to modify it to work with initial conditions later
 static int MyClass_init(PyObject *self, PyObject *args, PyObject *kwds) {
-    ((MyClass *) self)->set_value(5);
+    ((MyClassWrapper *) self)->my_class = new MyClass(5);
 
     printf("Module: myclass init\n");
     return 0;
 }
 
-static void MyClass_dealloc(MyClass *self) {
+static void MyClass_dealloc(MyClassWrapper *self) {
     printf("Module: myclass dealloc\n");
-    // delete self->fot;
+    delete self->my_class;
     Py_TYPE(self)->tp_free(self);
 }
 
 static PyObject *MyClass_get_value(PyObject *self, PyObject *args) {
-    MyClass *my_class = (MyClass *) self;
-    return PyFloat_FromDouble((double) my_class->get_value());
+    MyClassWrapper *my_class_wrapper = (MyClassWrapper *) self;
+    return PyFloat_FromDouble((double) my_class_wrapper->my_class->get_value());
 }
 
 /*
@@ -85,7 +90,7 @@ static PyMethodDef MyClass_methods[] = {
 PyTypeObject MyClassType = {
     PyVarObject_HEAD_INIT(NULL, 0)
     .tp_name = "my_package.MyClass",
-    .tp_basicsize = sizeof(MyClass),
+    .tp_basicsize = sizeof(MyClassWrapper),
     .tp_dealloc = (destructor)MyClass_dealloc,
     // .tp_repr = (reprfunc)FotPlanner_repr,
     .tp_flags = Py_TPFLAGS_DEFAULT |
