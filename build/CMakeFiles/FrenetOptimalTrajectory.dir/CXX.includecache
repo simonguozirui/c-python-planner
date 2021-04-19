@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/simon/Desktop/ERDOS-Pylot/c-python-planner-not-used/AnytimeFrenetPlanner.cpp
+AnytimeFrenetPlanner.h
+/mnt/c/Users/simon/Desktop/ERDOS-Pylot/c-python-planner-not-used/AnytimeFrenetPlanner.h
+mutex
+-
+thread
+-
+unistd.h
+-
+stdio.h
+-
+math.h
+-
+
+/mnt/c/Users/simon/Desktop/ERDOS-Pylot/c-python-planner-not-used/AnytimeFrenetPlanner.h
+mutex
+-
+thread
+-
+vector
+-
+
+/mnt/c/Users/simon/Desktop/ERDOS-Pylot/c-python-planner-not-used/build/FrenetOptimalTrajectory_autogen/mocs_compilation.cpp
+

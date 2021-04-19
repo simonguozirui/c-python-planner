@@ -1,11 +1,6 @@
 ## Package `fot_planner`
 
 ```
-conda create --name cpy python=3.8
-conda activate cpy
-```
-
-```
 - setup.py 
 - planner.cpp
 - planner.h
@@ -13,6 +8,13 @@ conda activate cpy
 - AnytimeFrenetPlanner.cpp
 ```
 
-Build the package by: 
-`python setup.py install` or `python setup.py build`.
 
+Build the package by:
+```
+python3 setup.py install
+```
+
+Also do
+```
+python setup.py build_ext --inplace
+```
