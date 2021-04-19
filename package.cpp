@@ -1,10 +1,13 @@
 #include <Python.h>
 #include <iostream>
 
+#include "AnytimeFrenetPlanner.h"
+
 class MyClass {
 public:
     MyClass(int v) {
         this->value = v;
+        this->fot = NULL;
     }
     ~MyClass() {
         std::cout << "Destroying class" << std::endl;
@@ -17,13 +20,8 @@ public:
     }
 private:
     int value;
+    AnytimeFrenetPlanner *fot;
 };
-
-typedef struct {
-    PyObject_HEAD
-    MyClass *fot;
-} PyMyClass;
-
 
 PyObject *MyClass_new(PyTypeObject *type, PyObject *args, PyObject *kwds) {
     MyClass *self = (MyClass*) type->tp_alloc(type, 1);
