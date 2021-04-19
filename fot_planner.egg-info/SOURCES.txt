@@ -1,7 +1,0 @@
-README.md
-planner_package.cpp
-setup.py
-fot_planner.egg-info/PKG-INFO
-fot_planner.egg-info/SOURCES.txt
-fot_planner.egg-info/dependency_links.txt
-fot_planner.egg-info/top_level.txt
