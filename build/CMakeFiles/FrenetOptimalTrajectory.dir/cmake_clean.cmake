@@ -4,8 +4,8 @@ file(REMOVE_RECURSE
   "FrenetOptimalTrajectory_autogen"
   "CMakeFiles/FrenetOptimalTrajectory.dir/AnytimeFrenetPlanner.cpp.o"
   "CMakeFiles/FrenetOptimalTrajectory.dir/FrenetOptimalTrajectory_autogen/mocs_compilation.cpp.o"
+  "libFrenetOptimalTrajectory.a"
   "libFrenetOptimalTrajectory.pdb"
-  "libFrenetOptimalTrajectory.so"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,1 +1,2 @@
-/usr/bin/c++ -fPIC -march=native -I -O3 -pthread -Wall -O3 -DNDEBUG  -shared -Wl,-soname,libFrenetOptimalTrajectory.so -o libFrenetOptimalTrajectory.so CMakeFiles/FrenetOptimalTrajectory.dir/FrenetOptimalTrajectory_autogen/mocs_compilation.cpp.o CMakeFiles/FrenetOptimalTrajectory.dir/AnytimeFrenetPlanner.cpp.o  -Wl,-rpath,/home/simonguozirui/anaconda3/lib /home/simonguozirui/anaconda3/lib/libQt5Widgets.so.5.9.7 /home/simonguozirui/anaconda3/lib/libQt5Gui.so.5.9.7 /home/simonguozirui/anaconda3/lib/libQt5Core.so.5.9.7 
+/usr/bin/ar qc libFrenetOptimalTrajectory.a  CMakeFiles/FrenetOptimalTrajectory.dir/FrenetOptimalTrajectory_autogen/mocs_compilation.cpp.o CMakeFiles/FrenetOptimalTrajectory.dir/AnytimeFrenetPlanner.cpp.o
+/usr/bin/ranlib libFrenetOptimalTrajectory.a

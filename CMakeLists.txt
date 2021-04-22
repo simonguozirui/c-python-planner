@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-set(CMAKE_CXX_FLAGS "-march=native -I -O3 -pthread -Wall")
+set(CMAKE_CXX_FLAGS "-march=native -I -O3 -pthread -Wall -DQT_NO_VERSION_TAGGING")
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -O0")
 set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -O0")
 
@@ -29,9 +29,10 @@ include_directories(
 
 # include_directories("/usr/include/python3.8") # for /usr/include/python3.8/structmember.h
 
-add_library(FrenetOptimalTrajectory SHARED
+add_library(FrenetOptimalTrajectory STATIC
             AnytimeFrenetPlanner.cpp
             AnytimeFrenetPlanner.h)
 
+# target_link_libraries(FrenetOptimalTrajectory Eigen3::Eigen Qt5::Widgets Qt5::Gui)
+target_link_libraries(FrenetOptimalTrajectory Eigen3::Eigen Qt5::Core Qt5::Gui Qt5::Widgets)
 
-target_link_libraries(FrenetOptimalTrajectory Eigen3::Eigen Qt5::Widgets Qt5::Gui)

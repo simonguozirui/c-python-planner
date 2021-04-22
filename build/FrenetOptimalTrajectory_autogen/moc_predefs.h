@@ -265,7 +265,6 @@
 #define linux 1
 #define __cpp_range_based_for 200907
 #define __FLT64_HAS_QUIET_NAN__ 1
-#define FrenetOptimalTrajectory_EXPORTS 1
 #define __FLT32_MIN_10_EXP__ (-37)
 #define __SSE2__ 1
 #define __EXCEPTIONS 1

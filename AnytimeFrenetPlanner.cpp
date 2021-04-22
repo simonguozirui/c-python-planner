@@ -5,13 +5,36 @@
 #include <stdio.h> 
 #include <math.h> 
 
+// see if we can include these 
+#include <Eigen/LU>
+
+using namespace Eigen;
 using namespace std;
 
+#include <QLine>
 
 AnytimeFrenetPlanner::AnytimeFrenetPlanner() {
     run_workers = false;
     printf("AnytimeFrenetPlanner: Planner Initiated\n");
     mu = new mutex();
+
+    // this is just to test if we can call these library functions
+    Vector2f p1, p2; //this is from Eigen
+    QPointF intersect_pt;
+
+    p1.x() = 1.0;
+    p1.y() = 1.0;
+    p2.x() = 5.0;
+    p2.y() = 5.0;
+    QLineF line_segment(p1.x(), p1.y(), p2.x(), p2.y());
+    QLineF lseg1(p1.x(), p1.y(), p2.x(), p2.y());
+    // int x1 = 1;
+    QLineF::IntersectType x1 = line_segment.intersect(lseg1, &intersect_pt);
+    if (x1 == 1) {
+        printf("Intersect\n");
+    } else {
+        printf("Not intersect\n");
+    }
 };
 
 AnytimeFrenetPlanner::~AnytimeFrenetPlanner() {
