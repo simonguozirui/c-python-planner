@@ -56,7 +56,10 @@
 	],
 	"MOC_PREDEFS_FILE" : "/mnt/c/Users/simon/Desktop/ERDOS-Pylot/c-python-planner/build/FrenetOptimalTrajectory_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
-	"MOC_SKIP" : [],
+	"MOC_SKIP" : 
+	[
+		"/mnt/c/Users/simon/Desktop/ERDOS-Pylot/c-python-planner/build/FrenetOptimalTrajectoryTest_autogen/mocs_compilation.cpp"
+	],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 4,
 	"PARSE_CACHE_FILE" : "/mnt/c/Users/simon/Desktop/ERDOS-Pylot/c-python-planner/build/CMakeFiles/FrenetOptimalTrajectory_autogen.dir/ParseCache.txt",
@@ -73,7 +76,10 @@
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
-	"UIC_SKIP" : [],
+	"UIC_SKIP" : 
+	[
+		"/mnt/c/Users/simon/Desktop/ERDOS-Pylot/c-python-planner/build/FrenetOptimalTrajectoryTest_autogen/mocs_compilation.cpp"
+	],
 	"UIC_UI_FILES" : [],
 	"VERBOSITY" : 0
 }

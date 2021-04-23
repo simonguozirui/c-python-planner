@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /mnt/c/Users/simon/Desktop/ERDOS-Pylot/c-python-planner/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named FrenetOptimalTrajectoryTest
+
+# Build rule for target.
+FrenetOptimalTrajectoryTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 FrenetOptimalTrajectoryTest
+.PHONY : FrenetOptimalTrajectoryTest
+
+# fast build rule for target.
+FrenetOptimalTrajectoryTest/fast:
+	$(MAKE) -f CMakeFiles/FrenetOptimalTrajectoryTest.dir/build.make CMakeFiles/FrenetOptimalTrajectoryTest.dir/build
+.PHONY : FrenetOptimalTrajectoryTest/fast
+
+#=============================================================================
 # Target rules for targets named FrenetOptimalTrajectory
 
 # Build rule for target.
@@ -122,6 +135,19 @@ FrenetOptimalTrajectory: cmake_check_build_system
 FrenetOptimalTrajectory/fast:
 	$(MAKE) -f CMakeFiles/FrenetOptimalTrajectory.dir/build.make CMakeFiles/FrenetOptimalTrajectory.dir/build
 .PHONY : FrenetOptimalTrajectory/fast
+
+#=============================================================================
+# Target rules for targets named FrenetOptimalTrajectoryTest_autogen
+
+# Build rule for target.
+FrenetOptimalTrajectoryTest_autogen: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 FrenetOptimalTrajectoryTest_autogen
+.PHONY : FrenetOptimalTrajectoryTest_autogen
+
+# fast build rule for target.
+FrenetOptimalTrajectoryTest_autogen/fast:
+	$(MAKE) -f CMakeFiles/FrenetOptimalTrajectoryTest_autogen.dir/build.make CMakeFiles/FrenetOptimalTrajectoryTest_autogen.dir/build
+.PHONY : FrenetOptimalTrajectoryTest_autogen/fast
 
 #=============================================================================
 # Target rules for targets named FrenetOptimalTrajectory_autogen
@@ -142,6 +168,7 @@ AnytimeFrenetPlanner.o: AnytimeFrenetPlanner.cpp.o
 
 # target to build an object file
 AnytimeFrenetPlanner.cpp.o:
+	$(MAKE) -f CMakeFiles/FrenetOptimalTrajectoryTest.dir/build.make CMakeFiles/FrenetOptimalTrajectoryTest.dir/AnytimeFrenetPlanner.cpp.o
 	$(MAKE) -f CMakeFiles/FrenetOptimalTrajectory.dir/build.make CMakeFiles/FrenetOptimalTrajectory.dir/AnytimeFrenetPlanner.cpp.o
 .PHONY : AnytimeFrenetPlanner.cpp.o
 
@@ -151,6 +178,7 @@ AnytimeFrenetPlanner.i: AnytimeFrenetPlanner.cpp.i
 
 # target to preprocess a source file
 AnytimeFrenetPlanner.cpp.i:
+	$(MAKE) -f CMakeFiles/FrenetOptimalTrajectoryTest.dir/build.make CMakeFiles/FrenetOptimalTrajectoryTest.dir/AnytimeFrenetPlanner.cpp.i
 	$(MAKE) -f CMakeFiles/FrenetOptimalTrajectory.dir/build.make CMakeFiles/FrenetOptimalTrajectory.dir/AnytimeFrenetPlanner.cpp.i
 .PHONY : AnytimeFrenetPlanner.cpp.i
 
@@ -160,8 +188,36 @@ AnytimeFrenetPlanner.s: AnytimeFrenetPlanner.cpp.s
 
 # target to generate assembly for a file
 AnytimeFrenetPlanner.cpp.s:
+	$(MAKE) -f CMakeFiles/FrenetOptimalTrajectoryTest.dir/build.make CMakeFiles/FrenetOptimalTrajectoryTest.dir/AnytimeFrenetPlanner.cpp.s
 	$(MAKE) -f CMakeFiles/FrenetOptimalTrajectory.dir/build.make CMakeFiles/FrenetOptimalTrajectory.dir/AnytimeFrenetPlanner.cpp.s
 .PHONY : AnytimeFrenetPlanner.cpp.s
+
+FrenetOptimalTrajectoryTest_autogen/mocs_compilation.o: FrenetOptimalTrajectoryTest_autogen/mocs_compilation.cpp.o
+
+.PHONY : FrenetOptimalTrajectoryTest_autogen/mocs_compilation.o
+
+# target to build an object file
+FrenetOptimalTrajectoryTest_autogen/mocs_compilation.cpp.o:
+	$(MAKE) -f CMakeFiles/FrenetOptimalTrajectoryTest.dir/build.make CMakeFiles/FrenetOptimalTrajectoryTest.dir/FrenetOptimalTrajectoryTest_autogen/mocs_compilation.cpp.o
+.PHONY : FrenetOptimalTrajectoryTest_autogen/mocs_compilation.cpp.o
+
+FrenetOptimalTrajectoryTest_autogen/mocs_compilation.i: FrenetOptimalTrajectoryTest_autogen/mocs_compilation.cpp.i
+
+.PHONY : FrenetOptimalTrajectoryTest_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+FrenetOptimalTrajectoryTest_autogen/mocs_compilation.cpp.i:
+	$(MAKE) -f CMakeFiles/FrenetOptimalTrajectoryTest.dir/build.make CMakeFiles/FrenetOptimalTrajectoryTest.dir/FrenetOptimalTrajectoryTest_autogen/mocs_compilation.cpp.i
+.PHONY : FrenetOptimalTrajectoryTest_autogen/mocs_compilation.cpp.i
+
+FrenetOptimalTrajectoryTest_autogen/mocs_compilation.s: FrenetOptimalTrajectoryTest_autogen/mocs_compilation.cpp.s
+
+.PHONY : FrenetOptimalTrajectoryTest_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+FrenetOptimalTrajectoryTest_autogen/mocs_compilation.cpp.s:
+	$(MAKE) -f CMakeFiles/FrenetOptimalTrajectoryTest.dir/build.make CMakeFiles/FrenetOptimalTrajectoryTest.dir/FrenetOptimalTrajectoryTest_autogen/mocs_compilation.cpp.s
+.PHONY : FrenetOptimalTrajectoryTest_autogen/mocs_compilation.cpp.s
 
 FrenetOptimalTrajectory_autogen/mocs_compilation.o: FrenetOptimalTrajectory_autogen/mocs_compilation.cpp.o
 
@@ -190,22 +246,57 @@ FrenetOptimalTrajectory_autogen/mocs_compilation.cpp.s:
 	$(MAKE) -f CMakeFiles/FrenetOptimalTrajectory.dir/build.make CMakeFiles/FrenetOptimalTrajectory.dir/FrenetOptimalTrajectory_autogen/mocs_compilation.cpp.s
 .PHONY : FrenetOptimalTrajectory_autogen/mocs_compilation.cpp.s
 
+main.o: main.cpp.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/FrenetOptimalTrajectoryTest.dir/build.make CMakeFiles/FrenetOptimalTrajectoryTest.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/FrenetOptimalTrajectoryTest.dir/build.make CMakeFiles/FrenetOptimalTrajectoryTest.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/FrenetOptimalTrajectoryTest.dir/build.make CMakeFiles/FrenetOptimalTrajectoryTest.dir/main.cpp.s
+.PHONY : main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... rebuild_cache"
+	@echo "... FrenetOptimalTrajectoryTest"
 	@echo "... FrenetOptimalTrajectory"
+	@echo "... FrenetOptimalTrajectoryTest_autogen"
 	@echo "... FrenetOptimalTrajectory_autogen"
 	@echo "... AnytimeFrenetPlanner.o"
 	@echo "... AnytimeFrenetPlanner.i"
 	@echo "... AnytimeFrenetPlanner.s"
+	@echo "... FrenetOptimalTrajectoryTest_autogen/mocs_compilation.o"
+	@echo "... FrenetOptimalTrajectoryTest_autogen/mocs_compilation.i"
+	@echo "... FrenetOptimalTrajectoryTest_autogen/mocs_compilation.s"
 	@echo "... FrenetOptimalTrajectory_autogen/mocs_compilation.o"
 	@echo "... FrenetOptimalTrajectory_autogen/mocs_compilation.i"
 	@echo "... FrenetOptimalTrajectory_autogen/mocs_compilation.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

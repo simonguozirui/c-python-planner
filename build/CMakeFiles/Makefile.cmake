@@ -153,12 +153,15 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"
+  "CMakeFiles/FrenetOptimalTrajectoryTest_autogen.dir/AutogenInfo.json"
   "CMakeFiles/FrenetOptimalTrajectory_autogen.dir/AutogenInfo.json"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/FrenetOptimalTrajectoryTest.dir/DependInfo.cmake"
   "CMakeFiles/FrenetOptimalTrajectory.dir/DependInfo.cmake"
+  "CMakeFiles/FrenetOptimalTrajectoryTest_autogen.dir/DependInfo.cmake"
   "CMakeFiles/FrenetOptimalTrajectory_autogen.dir/DependInfo.cmake"
   )

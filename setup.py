@@ -22,18 +22,30 @@ def main():
     pwd = os.path.dirname(os.path.realpath(__file__))
 
     
-    CFLAGS = ['-std=c++11', '-I', '-O3', '-pthread', '-Wall', '-I/build']
-    
-    LDFLAGS = ['-W','-Wno-undef', '-lstdc++', '-static-libstdc++', '-lm','-fPIC']
-    LDFLAGS += [os.path.join(pwd, 'build/libFrenetOptimalTrajectory.a')]
-    LDFLAGS += ['-lz']
+    CFLAGS = ['-std=c++11', '-fPIC', '-shared', '-I', '-Ofast', '-pthread', '-Wall'] #  '-I/build'
+
+    LDFLAGS = []
+    # LDFLAGS = ['-l:libFrenetOptimalTrajectory.a']
+    # LDFLAGS += ['-llibFrenetOptimalTrajectory']
+    # LDFLAGS += ['-static']
+    LDFLAGS += ['-Xlinker', '-export-dynamic']
+    # LDFLAGS += ['-lstdc++', '-static-libstdc++']
+    # LDFLAGS += ['-L' + '/usr/include/x86_64-linux-gnu/qt5/', '-lQtCore']
+
+    LDFLAGS += ['-I', '/usr/include/x86_64-linux-gnu/qt5/QtCore', '-l' , 'Qt5Core']
+    LDFLAGS += ['-L' + os.path.join(pwd, 'build'), '-lFrenetOptimalTrajectory']
+    # LDFLAGS += ['-Wl,-Bstatic']
+    # LDFLAGS += [os.path.join(pwd, 'build/libFrenetOptimalTrajectory.a')]
+    # LDFLAGS += ['-L' + os.path.join(pwd, 'build'), '-Wl,-R'+os.path.join(pwd, 'build')]
+    # LDFLAGS += ['-W','-Wno-undef', '-lstdc++', '-static-libstdc++', ] #'-lm'
+
     print("linker flag", LDFLAGS)
 
     #'AnytimeFrenetPlanner.cpp'
     module = Extension('fot_planner',
                     sources = ['planner_package.cpp'],
                     language='C++',
-                    include_dirs= ['.'],
+                    # include_dirs= ['/usr/include/x86_64-linux-gnu/qt5/'],
                     # libraries=['stdc++'],
                     extra_compile_args = CFLAGS, 
                     extra_link_args= LDFLAGS)
@@ -46,8 +58,8 @@ def main():
         # cmdclass={"build_ext": build_ext})
         # distclass= BinaryDistribution,
         # package_data={'': ['build/libFrenetOptimalTrajectory.so']},
-        ext_modules=[module],
-        include_package_data=True)
+        ext_modules=[module])
+        # include_package_data=True)
 
 if __name__ == "__main__":
     main()

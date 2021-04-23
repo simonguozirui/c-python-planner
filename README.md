@@ -9,12 +9,11 @@
 ```
 
 
-Build the package by:
+Build package by
 ```
-python3 setup.py install
+./install.sh
 ```
 
-Also do
-```
-python setup.py build_ext --inplace
-```
+Use `./build/FrenetOptimalTrajectoryTest` for unit test on the C portion, to see if `./build.sh` successfully build. 
+
+Use `python simple-anytime.py` for testing on basic functionality of import the module into Python and calling function.
